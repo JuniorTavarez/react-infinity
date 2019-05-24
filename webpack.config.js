@@ -16,7 +16,7 @@ compress.unused = true;
 module.exports = env => {
 	return {
 		entry: {
-			app: './assets/js/components/app.js'
+			app: './assets/js/app.js'
 		},
 		output: {
 			path: path.resolve(__dirname, 'public/js/dist'),
