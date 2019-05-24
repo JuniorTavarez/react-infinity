@@ -10,12 +10,12 @@ const prettyUrl = require('gulp-pretty-url');
 var del = require('del');
 const gulpEdge = require('gulp-edgejs');
 
-// Compiles SASS To CSS
+// Compiles SCSS To CSS
 gulp.task(
 	'styles',
 	gulp.series(() => {
 		return gulp
-			.src('assets/sass/**/*.sass')
+			.src('assets/scss/**/*.scss')
 			.pipe(
 				sass({
 					outputStyle: 'compressed'
@@ -110,7 +110,7 @@ gulp.task(
 			'webpack:dev',
 			'styles',
 			function runningWatch() {
-				gulp.watch('./assets/sass/**/*', gulp.parallel('styles'));
+				gulp.watch('./assets/scss/**/*', gulp.parallel('styles'));
 				gulp.watch('./assets/js/**/*', gulp.parallel('webpack:dev'));
 				gulp.watch(['./public/**/*', './public/*']).on('change', reload);
 			}
@@ -127,7 +127,7 @@ gulp.task(
 			'webpack:dev',
 			'styles',
 			function runningWatch() {
-				gulp.watch('./assets/sass/**/*', gulp.parallel('styles'));
+				gulp.watch('./assets/scss/**/*', gulp.parallel('styles'));
 				gulp.watch('./assets/js/**/*', gulp.parallel('webpack:dev'));
 				gulp.watch(['./public/**/*', './public/*']).on('change', reload);
 			}
@@ -207,7 +207,7 @@ gulp.task(
 			function runningWatch() {
 				gulp.watch('./assets/views/**/*', gulp.series('views'));
 				gulp.watch('./assets/views/**/*', gulp.series('cleanTemp'));
-				gulp.watch('./assets/sass/**/*', gulp.parallel('styles'));
+				gulp.watch('./assets/scss/**/*', gulp.parallel('styles'));
 				gulp.watch('./assets/js/**/*', gulp.parallel('webpack:dev'));
 				gulp.watch(['./public/**/*', './public/*']).on('change', reload);
 			}
