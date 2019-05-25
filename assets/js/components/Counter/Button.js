@@ -33,7 +33,7 @@ class Counter extends Component {
 				className={`button ${this.props.action}`}
 				style={styleButton}
 				onMouseEnter={this.toggleHover}
-				onMouseEnter={this.toggleHover}
+				onClick={this.props.trigger}
 			>
 				{this.props.children}
 			</div>

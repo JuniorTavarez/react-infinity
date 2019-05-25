@@ -12,7 +12,7 @@ class App extends Component {
 		return (
 			<div className={'container'}>
 				<div>
-					<Counter />
+					<Counter status="auto" />
 				</div>
 			</div>
 		);
