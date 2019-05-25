@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Button from './Button';
 
 class Counter extends Component {
 	constructor() {
@@ -12,12 +13,24 @@ class Counter extends Component {
 					0
 				</div>
 				<div className="buttons" style={styleButtons}>
-					<div className="minus" style={styleButton}>
+					<Button
+						action="minus"
+						hoverColor="white"
+						backgroundColor="black"
+						fontColor="black"
+						fontColor2="white"
+					>
 						-
-					</div>
-					<div className="plus" style={styleButton}>
+					</Button>
+					<Button
+						action="plus"
+						hoverColor="black"
+						backgroundColor="white"
+						fontColor="white"
+						fontColor2="black"
+					>
 						+
-					</div>
+					</Button>
 				</div>
 			</div>
 		);
@@ -40,16 +53,6 @@ const styleNumber = {
 
 const styleButtons = {
 	display: 'flex'
-};
-
-const styleButton = {
-	width: '50%',
-	border: '3px solid black',
-	padding: '20px',
-	fontSize: '2rem',
-	fontWeight: '900',
-	textAlign: 'center',
-	cursor: 'pointer'
 };
 
 export default Counter;
